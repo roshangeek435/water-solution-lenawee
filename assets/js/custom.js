@@ -1,106 +1,111 @@
-jQuery(document).ready(function($) {
-
+jQuery(document).ready(function ($) {
     var window_size = jQuery(window).width();
     new WOW().init();
 
-    jQuery('.service-slider').slick({
+    jQuery(".service-slider").slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         infinite: true,
         dots: true,
         arrows: true,
-        prevArrow: '<button class="slide-arrow prev-arrow"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
-        nextArrow: '<button class="slide-arrow next-arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
+        prevArrow:
+            '<button class="slide-arrow prev-arrow"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
+        nextArrow:
+            '<button class="slide-arrow next-arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
         autoplay: false,
-        customPaging: function(slider, i) {
-            return jQuery(slider.$slides[i])
-                .find(".dot-title")
-                .text();
+        customPaging: function (slider, i) {
+            return jQuery(slider.$slides[i]).find(".dot-title").text();
         },
         appendDots: jQuery(".custom-dot-slider"),
         dotsClass: "dropdown-tabbing",
-        responsive: [{
+        responsive: [
+            {
                 breakpoint: 992,
                 settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true,
-                }
+                    arrows: false,
+                },
             },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true,
-                }
-            }
-        ]
+        ],
     });
 
-    jQuery('.gallery-slider').slick({
+    jQuery(".gallery-slider").slick({
         slidesToShow: 5,
         slidesToScroll: 1,
         infinite: true,
         dots: false,
         arrows: true,
-        prevArrow: '<button class="slide-arrow prev-arrow"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
-        nextArrow: '<button class="slide-arrow next-arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
+        prevArrow:
+            '<button class="slide-arrow prev-arrow"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
+        nextArrow:
+            '<button class="slide-arrow next-arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
         autoplay: true,
         swipeToSlide: true,
         draggable: true,
-        responsive: [{
-                breakpoint: 992,
+        responsive: [
+            {
+                breakpoint: 1500,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 1200,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 1,
-                    infinite: true,
-                    dots: true,
-                }
+                },
             },
             {
-                breakpoint: 768,
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                },
+            },
+
+            {
+                breakpoint: 576,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    infinite: true,
-                    dots: true,
-                }
-            }
-        ]
+                },
+            },
+        ],
     });
 
     jQuery().fancybox({
-        selector: '.gallery-slider a',
-        "afterShow": function() {
-            jQuery('.gallery-slider').slick('slickPause');
+        selector: ".gallery-slider a",
+        afterShow: function () {
+            jQuery(".gallery-slider").slick("slickPause");
         },
-        "afterClose": function() {
-            jQuery('.gallery-slider').slick('slickPlay');
-        }
+        afterClose: function () {
+            jQuery(".gallery-slider").slick("slickPlay");
+        },
     });
 
-    jQuery('.review-slider').slick({
+    jQuery(".review-slider").slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         infinite: true,
         dots: true,
         arrows: true,
-        prevArrow: '<button class="slide-arrow prev-arrow"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
-        nextArrow: '<button class="slide-arrow next-arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
+        prevArrow:
+            '<button class="slide-arrow prev-arrow"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
+        nextArrow:
+            '<button class="slide-arrow next-arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
         autoplay: false,
         swipeToSlide: true,
         draggable: true,
-        responsive: [{
+        responsive: [
+            {
                 breakpoint: 992,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     infinite: true,
                     dots: true,
-                }
+                },
             },
             {
                 breakpoint: 768,
@@ -109,26 +114,27 @@ jQuery(document).ready(function($) {
                     slidesToScroll: 1,
                     infinite: true,
                     dots: true,
-                }
-            }
-        ]
+                },
+            },
+        ],
     });
 
     /* Scroll To Top JS */
-    jQuery(window).scroll(function() {
+    jQuery(window).scroll(function () {
         if (jQuery(this).scrollTop() > 100) {
-            jQuery('#scrollToTop').fadeIn();
+            jQuery("#scrollToTop").fadeIn();
         } else {
-            jQuery('#scrollToTop').fadeOut();
+            jQuery("#scrollToTop").fadeOut();
         }
     });
-    jQuery('#scrollToTop').click(function() {
+    jQuery("#scrollToTop").click(function () {
         jQuery("html, body").animate({ scrollTop: 0 }, 600);
         return false;
     });
 
     /* Sticky Header JS */
-    jQuery(window).scroll(function() { // this will work when your window scrolled.
+    jQuery(window).scroll(function () {
+        // this will work when your window scrolled.
         var height = jQuery(window).scrollTop(); //getting the scrolling height of window
         if (height > 100) {
             jQuery(".site-header").addClass("sticky_head");
@@ -138,30 +144,39 @@ jQuery(document).ready(function($) {
     });
 
     /* Mobile Menu JS */
-    jQuery("#menu-item-21 a").first().attr('href', 'javascript:void(0);');
-    jQuery("#primary-menu .menu-item a").click(function() {
+    jQuery("#menu-item-21 a").first().attr("href", "javascript:void(0);");
+    jQuery("#primary-menu .menu-item a").click(function () {
         jQuery("#site-navigation").removeClass("toggled");
     });
 
     /*Quotr Modal JS */
-    jQuery("#hiring_Modal").on("show.bs.modal", function() {
+    jQuery("#hiring_Modal").on("show.bs.modal", function () {
         var scrolly = window.scrollY;
         jQuery("body").css("top", "-" + scrolly + "px");
         jQuery(this).attr("data-top", scrolly);
     });
-    jQuery("#hiring_Modal").on("hidden.bs.modal", function() {
+    jQuery("#hiring_Modal").on("hidden.bs.modal", function () {
         var scrolly = jQuery(this).attr("data-top");
         jQuery("body").css("top", "0px");
         window.scrollTo(0, scrolly);
     });
 
+    jQuery("body").on("click", ".tab-dropdown", function () {
+        jQuery(".custom-dot-slider").toggleClass("active-dropdown");
+        jQuery(".dropdown-tabbing").toggleClass("show-list");
+    });
+
+    jQuery("body").on("click", ".dropdown-tabbing li", function () {
+        jQuery(".custom-dot-slider").removeClass("active-dropdown");
+        jQuery(".dropdown-tabbing").removeClass("show-list");
+        jQuery(".services-active-menu").text(jQuery(this).text());
+    });
 });
 
 /* Window Load and Resize JS */
-jQuery(window).on('load resize', function() {
+jQuery(window).on("load resize", function () {
     var window_size = jQuery(window).width();
     if (window_size <= 991) {
-
         // jQuery('body').on('click', '#primary-menu .menu-item-has-children', function() {
         //     if ((jQuery(this).hasClass('active-sub-menu'))) {
         //         jQuery(this).removeClass('active-sub-menu');
@@ -174,10 +189,9 @@ jQuery(window).on('load resize', function() {
         //     }
         // });
         /* CTA button JS */
-        jQuery(window).scroll(function() {
+        jQuery(window).scroll(function () {
             var window_size_scroll = jQuery(window).width();
             if (window_size_scroll <= 991) {
-
                 if (jQuery(this).scrollTop() > 100) {
                     console.log("demo cta" + window_size_scroll);
                     jQuery(".cta-btn").fadeIn();

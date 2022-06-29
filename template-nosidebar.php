@@ -4,17 +4,18 @@
  */
   get_header();
 ?>
-<section class="main-banner inner-banner">
+<section class="main-banner inner-banner banner-3">
     <div class="container">
         <div class="row">
-            <div class="col-lg-9">
-                <div class="banner-text">
+            <div class="col-lg-12">
+                <div class="banner-text white-text">
                     <h1 class="h1-title"><?php the_title(); ?></h1>
                 </div>
             </div>
         </div>
     </div>
-</section><!-- emd of main-banner -->
+</section>
+<!-- END OF BANNER -->
 
 <div class="inner-page-text">
     <div class="container">

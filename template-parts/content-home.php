@@ -9,10 +9,10 @@
                             <?php
                             $val = array("(", ")", " ", "-", ".");
                             $replace = array("", "", "", "", "");
-                            $primary_phone_number = get_field('primary_phone_number','option');
+                            $primary_phone_number = get_field('primary_phone_number', 'option');
                             $primary_phone_link = str_replace($val, $replace, $primary_phone_number);
                             ?>
-                            <a href="<?php echo 'tel:'.$primary_phone_link; ?>" class="sec-btn" title="Call Now">call now</a>
+                            <a href="<?php echo 'tel:' . $primary_phone_link; ?>" class="sec-btn" title="Call Now">call now</a>
                             <a href="<?php echo get_the_permalink(41); ?>" class="sec-btn btn-transparent" title="Contact Us">Contact Us</a>
                         </div>
                     </div>
@@ -31,10 +31,10 @@
                     <div class="about-us-content">
                         <?php
                         $about_title = get_field('about_us_title');
-                        if(!empty($about_title)){
-                            ?>
+                        if (!empty($about_title)) {
+                        ?>
                             <h2 class="h2-title"><?php echo $about_title; ?></h2>
-                            <?php
+                        <?php
                         }
                         ?>
                         <div class="about-us-text overflow-text">
@@ -59,15 +59,17 @@
             <div class="col-lg-12 text-center">
                 <?php
                 $our_services_title = get_field('our_services_main_title');
-                if(!empty($our_services_title)){
-                    ?>
+                if (!empty($our_services_title)) {
+                ?>
                     <div class="sec-title text-center white-text">
                         <h2 class="h2-title unique-title"><?php echo get_field('our_services_main_title'); ?></h2>
                     </div>
-                    <?php
+                <?php
                 }
                 ?>
                 <div class="serviec-tabs custom-dot-slider">
+                    <button class="sec-btn tab-dropdown for-mob" type="button"> <span class="services-active-menu">well rehabilitation and repair</span><span class="caret"></span></button>
+
                 </div>
             </div>
         </div>
@@ -87,10 +89,10 @@
                             <div class="service-content">
                                 <?php
                                 $our_services_title = get_sub_field('our_services_title');
-                                if(!empty($our_services_title)){
-                                    ?>
+                                if (!empty($our_services_title)) {
+                                ?>
                                     <h3 class="h3-title dot-title"><?php echo $our_services_title ?></h3>
-                                    <?php
+                                <?php
                                 }
                                 ?>
                                 <div class="service-content-text overflow-text">
